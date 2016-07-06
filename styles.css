@@ -21,15 +21,31 @@ input {
   text-align: center;
 }
 
+.sentence-li {
+  padding: 5px 0px;
+}
+
+/* Tenses */
+#tense-div {
+  padding-left: 35px;
+}
+
+.tense-span {
+  float:left;
+  padding-right: 20px;
+  font-style: normal;
+  font-size:30px;
+}
+
 /* POS Columns */
 ul {
-    list-style-type: none;
-    padding-left: 0px;
-    font-style: italic;
+  list-style-type: none;
+  padding-left: 0px;
+  font-style: italic;
 }
 
 #columns-div {
-  padding-left: 30px;
+  padding: 10px 0px 10px 35px;
   height: 100%;
   width: 100%;
 }
@@ -38,14 +54,14 @@ ul {
     overflow: hidden;
     padding-right: 50px;
     width: 100%;
-    margin: auto;
+    padding-left: 0px;
 }
 
 .col {
     float: left;
     padding: 5px;
     width: 25%;
-    margin: 10px;
+    padding-left: 0px;
     }
 
 /* Past Sentences */
@@ -58,7 +74,7 @@ ul {
   color: red;
 }
 
-.past-sentence-li:hover {
+.sentence-li:hover {
   color: red;
   cursor: pointer;
 }

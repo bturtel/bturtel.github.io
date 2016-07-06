@@ -13,6 +13,26 @@ var firebaseDB = firebase.database();
 var sentencesInFirebase = firebaseDB.ref('sentences');
 var pastSentences = new Set();
 
+// Tenses
+function addTenseLi(label, text) {
+  $li = $('<li>').text(text);
+  $li.on('click', function(){
+    $('#input').val(text);
+    processInput();
+  });
+  $li.addClass("sentence-li")
+  $li.append($('<span>').addClass("tense-span").text(label));
+  $('#tense-ul').append($li);
+}
+
+function showTenses() {
+  $('#tense-ul').html("");
+  var nlpSentence = nlp.sentence($('#input').val());
+  addTenseLi("Past:", nlpSentence.to_past().text());
+  addTenseLi("Present:", nlpSentence.to_present().text());
+  addTenseLi("Future:", nlpSentence.to_future().text());
+}
+
 // POS column functions 
 function createColumn(pos, terms, colId) {
   var column = $(colId);
@@ -44,6 +64,8 @@ function processInput() {
   var parts = getEmptyPosSets();
   var sentence = $('#input').val();
   event.preventDefault();
+
+  showTenses();
 
   // Split each sentence into POS
   terms = nlp.sentence(sentence).terms;
@@ -79,7 +101,8 @@ function addSentence(sentence) {
   pastSentences.add(sentence);
   if (previousSize < pastSentences.size) {
     var $sentenceLi = $('<li>').html(sentence);
-    $sentenceLi.addClass("past-sentence-li")
+    $sentenceLi.addClass("sentence-li");
+
     $sentenceLi.on('click', function(){
       $('#input').val($sentenceLi.text());
       processInput();
