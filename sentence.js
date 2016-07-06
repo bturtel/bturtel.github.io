@@ -13,7 +13,7 @@ var firebaseDB = firebase.database();
 var sentencesInFirebase = firebaseDB.ref('sentences');
 var pastSentences = new Set();
 
-// Functions
+// POS column functions 
 function createColumn(pos, terms, colId) {
   var column = $(colId);
   column.append($('<h2>').html(pos));
@@ -39,6 +39,7 @@ function getEmptyPosSets() {
             Determiner: new Set()
           }
 }
+
 function processInput() {
   var parts = getEmptyPosSets();
   var sentence = $('#input').val();
@@ -48,7 +49,6 @@ function processInput() {
   terms = nlp.sentence(sentence).terms;
   terms.forEach(function(term){
     for (pos in term.pos) {
-      console.log(pos +":" + term.normal)
       if (parts.hasOwnProperty(pos)){
         parts[pos].add(term.normal);
       }
@@ -60,14 +60,13 @@ function processInput() {
   for (var key in parts) {
     var colId = "#col"+colCount;
     if (parts[key].size) {
-      console.log(pos + ":" + colId)
       createColumn(key, parts[key], colId);     
       colCount += 1; 
     } 
   }
 };
 
-// Update past sentences
+// Past Sentences
 function updatePastSentences(){
   sentencesInFirebase.on('child_added', function(result) {
     addSentence(result.val().sentence);
