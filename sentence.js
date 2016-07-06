@@ -89,7 +89,7 @@ function addSentence(sentence) {
 
 // Main
 $(document).ready(function() {
-  $('#input').val("Ben went to the shop to buy a thing.")
+  $('#input').val("Enter a sentence here!")
   processInput();
   updatePastSentences();
 
