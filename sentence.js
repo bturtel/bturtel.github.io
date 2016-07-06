@@ -78,7 +78,8 @@ function addSentence(sentence) {
   pastSentences.add(sentence);
   if (previousSize < pastSentences.size) {
     var $sentenceLi = $('<li>').html(sentence);
-    $sentenceLi.on('dblclick', function(){
+    $sentenceLi.addClass("past-sentence-li")
+    $sentenceLi.on('click', function(){
       $('#input').val($sentenceLi.text());
       processInput();
     });
@@ -89,7 +90,7 @@ function addSentence(sentence) {
 
 // Main
 $(document).ready(function() {
-  $('#input').val("Enter a sentence here!")
+  $('#input').val("Enter a sentence here!");
   processInput();
   updatePastSentences();
 
