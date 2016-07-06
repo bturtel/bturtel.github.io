@@ -95,12 +95,6 @@ $(document).ready(function() {
   processInput();
   updatePastSentences();
 
-  // Try parse tree
-  var query = "http://bioai8core.fulton.asu.edu/KparserAPI/apiInput=/Every boxer walks.";
-  $.get( query, function( data ) {
-    console.log(data);
-  });
-
   // Parse
   $('#input').on('keyup', function(event) {
     if (event.keyCode === 0 || event.keyCode === 32) {
