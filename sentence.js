@@ -24,21 +24,23 @@ function createColumn(pos, terms, colId) {
   column.append(list);
 }
 
+function getEmptyPosSets() {
+  return {  Question: new Set(),
+            Noun: new Set(),
+            Verb: new Set(),
+            Person: new Set(),
+            Preposition: new Set(),
+            Adjective: new Set(),
+            Adverb: new Set(),
+            Infinitive: new Set(),
+            Possessive: new Set(),
+            Gerund: new Set(),
+            Date: new Set(),
+            Determiner: new Set()
+          }
+}
 function processInput() {
-  var parts = { 
-              Question: new Set(),
-              Noun: new Set(),
-              Verb: new Set(),
-              Person: new Set(),
-              Preposition: new Set(),
-              Adjective: new Set(),
-              Adverb: new Set(),
-              Infinitive: new Set(),
-              Possessive: new Set(),
-              Gerund: new Set(),
-              Date: new Set(),
-              Determiner: new Set()
-            }
+  var parts = getEmptyPosSets();
   var sentence = $('#input').val();
   event.preventDefault();
 
