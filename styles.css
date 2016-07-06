@@ -28,6 +28,7 @@ input {
 /* Tenses */
 #tense-div {
   padding-left: 35px;
+  padding-down: 10px;
 }
 
 .tense-span {
@@ -44,11 +45,12 @@ ul {
   font-style: italic;
 }
 
-#columns-div {
+div {
   padding: 10px 0px 10px 35px;
   height: 100%;
   width: 100%;
 }
+
 
 .col-row {
     overflow: hidden;
