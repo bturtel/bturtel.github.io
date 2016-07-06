@@ -1,0 +1,55 @@
+body {
+  background-color: #f2f2f2;
+  font-family: helvetica, sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h1 span {
+  font-weight: normal;
+}
+
+div {
+  margin: auto;
+  padding: 10px;
+}
+
+input {
+  width: 100%;
+  height: 80px;
+  font-size: 24px;
+  text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#columns-div {
+  height: 100%;
+  width: 100%;
+}
+
+.col-row {
+    overflow: hidden;
+    padding: 5px;
+    width: 100%;
+    margin: auto;
+}
+
+.col {
+    float: left;
+    padding: 5px;
+    width:25%;
+    font-size: 24px;
+    margin: 10px;
+    }
+
+.col li {
+    font-style: italic;
+}
+

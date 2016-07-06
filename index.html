@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+  <title>Sentence Parser</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- css -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div>
+	<input id="input" align = "middle"/>
+</div>
+
+<div id="columns-div">
+<div class="col-row">
+    <div id="col0" class="col"></div>
+    <div id="col1" class="col"></div>
+    <div id="col2" class="col"></div>
+</div>
+<div class="col-row">
+    <div id="col3" class="col"></div>
+    <div id="col4" class="col"></div>
+    <div id="col5" class="col"></div>
+</div>
+<div class="col-row">
+    <div id="col6" class="col"></div>
+    <div id="col7" class="col"></div>
+    <div id="col8" class="col"></div>
+</div>
+</div>
+
+<div>
+<h1>Previous Sentences</h1>	
+<ul id="past-sentence-ul">
+</ul>	
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script src="https://npmcdn.com/nlp_compromise@latest/builds/nlp_compromise.min.js"></script>
+
+<script type="text/javascript" src="sentence.js"></script>
+
+</body>
+</html>
