@@ -8,6 +8,7 @@ h2 {
   font-size:30px;
 }
 
+/* Input */
 #input-div {
   padding: 20px 50px;
 }
@@ -20,6 +21,7 @@ input {
   text-align: center;
 }
 
+/* POS Columns */
 ul {
     list-style-type: none;
     padding-left: 0px;
@@ -46,6 +48,7 @@ ul {
     margin: 10px;
     }
 
+/* Past Sentences */
 #past-sentence-div{
   padding-left: 35px;
 }
